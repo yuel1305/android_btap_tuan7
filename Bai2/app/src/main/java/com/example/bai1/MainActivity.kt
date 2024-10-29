@@ -14,7 +14,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Khởi tạo các thành phần trong giao diện
         val editTextNumber = findViewById<EditText>(R.id.editTextNumber)
         val radioEven = findViewById<RadioButton>(R.id.radioEven)
         val radioOdd = findViewById<RadioButton>(R.id.radioOdd)
@@ -23,13 +22,11 @@ class MainActivity : AppCompatActivity() {
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
         val textViewError = findViewById<TextView>(R.id.textViewError)
 
-        // Cài đặt layout cho RecyclerView
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         buttonShow.setOnClickListener {
             val inputText = editTextNumber.text.toString()
 
-            // Kiểm tra dữ liệu đầu vào
             if (inputText.isEmpty()) {
                 textViewError.text = "Vui lòng nhập số nguyên dương"
                 return@setOnClickListener
